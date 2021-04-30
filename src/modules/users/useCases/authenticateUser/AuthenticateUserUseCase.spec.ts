@@ -1,18 +1,32 @@
 import { InMemoryUsersRepository } from "../../repositories/in-memory/InMemoryUsersRepository"
+import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 
+let inMemoryUsersRepository: InMemoryUsersRepository;
 let authenticateUserUseCase: AuthenticateUserUseCase;
-let iInMemoryUsersRepository: InMemoryUsersRepository;
+let createUserUseCase: CreateUserUseCase;
+describe("Authenticate User", () => {
 
-describe("List User", () => {
-
- beforeEach(() => {
-  iInMemoryUsersRepository = new InMemoryUsersRepository();
-  authenticateUserUseCase = new AuthenticateUserUseCase(iInMemoryUsersRepository);
-
+ beforeEach(async () => {
+  inMemoryUsersRepository = new InMemoryUsersRepository();
+  authenticateUserUseCase = new AuthenticateUserUseCase(inMemoryUsersRepository);
+  createUserUseCase = new CreateUserUseCase(inMemoryUsersRepository);
  });
 
- it("Should be able it should be possible to list a user's data", () => {
+ it("Should be able to authorize a user", async () => {
 
+  const user = await createUserUseCase.execute({
+   name: "New User",
+   email: "test@test.com",
+   password: "12345"
+  })
+  const authorization = await authenticateUserUseCase.execute({
+   email: user.email,
+   password: "12345"
+  })
+
+  console.log("Autorization", authorization)
+  expect(authorization).toHaveProperty("id")
+  expect(authorization).toHaveProperty("token")
  })
 })

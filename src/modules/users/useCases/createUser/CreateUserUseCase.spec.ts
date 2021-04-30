@@ -1,5 +1,5 @@
-import { AppError } from "../../../../errors/AppError";
 import { InMemoryUsersRepository } from "../../repositories/in-memory/InMemoryUsersRepository";
+import { CreateUserError } from "./CreateUserError";
 import { CreateUserUseCase } from "./CreateUserUseCase"
 
 let createUserUseCase: CreateUserUseCase;
@@ -35,8 +35,6 @@ describe("Create User", () => {
     email: "test@test.com",
     password: "12345"
    });
-  }).rejects.toBeInstanceOf(AppError)
+  }).rejects.toBeInstanceOf(CreateUserError)
  });
-
-
 })
