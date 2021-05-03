@@ -25,8 +25,7 @@ describe("Authenticate User", () => {
    password: "12345"
   })
 
-  console.log("Autorization", authorization)
-  expect(authorization).toHaveProperty("id")
+  expect(authorization).toHaveProperty("user.id")
   expect(authorization).toHaveProperty("token")
  })
 })
