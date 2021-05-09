@@ -1,7 +1,6 @@
 import { InMemoryUsersRepository } from "../../repositories/in-memory/InMemoryUsersRepository";
 import { ShowUserProfileUseCase } from "../showUserProfile/ShowUserProfileUseCase";
 import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
-import { ShowUserProfileError } from "./ShowUserProfileError";
 
 
 let inMemoryUsersRepository: InMemoryUsersRepository;
@@ -10,7 +9,7 @@ let showUserProfileUseCase: ShowUserProfileUseCase;
 
 describe("Show User", () => {
 
- beforeEach(async () => {
+ beforeAll(async () => {
   inMemoryUsersRepository = new InMemoryUsersRepository();
   createUserUseCase = new CreateUserUseCase(inMemoryUsersRepository);
   showUserProfileUseCase = new ShowUserProfileUseCase(inMemoryUsersRepository);
