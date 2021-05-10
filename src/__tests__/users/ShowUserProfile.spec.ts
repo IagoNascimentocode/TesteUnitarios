@@ -1,6 +1,7 @@
-import { InMemoryUsersRepository } from "../../repositories/in-memory/InMemoryUsersRepository";
-import { ShowUserProfileUseCase } from "../showUserProfile/ShowUserProfileUseCase";
-import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
+import { InMemoryUsersRepository } from "../../modules/users/repositories/in-memory/InMemoryUsersRepository";
+import { CreateUserUseCase } from "../../modules/users/useCases/createUser/CreateUserUseCase";
+import { ShowUserProfileUseCase } from "../../modules/users/useCases/showUserProfile/ShowUserProfileUseCase";
+
 
 
 let inMemoryUsersRepository: InMemoryUsersRepository;

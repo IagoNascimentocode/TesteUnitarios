@@ -1,9 +1,10 @@
-import { InMemoryUsersRepository } from "../../repositories/in-memory/InMemoryUsersRepository";
-import { CreateUserError } from "./CreateUserError";
-import { CreateUserUseCase } from "./CreateUserUseCase"
+import { InMemoryUsersRepository } from "../../modules/users/repositories/in-memory/InMemoryUsersRepository";
+import { CreateUserError } from "../../modules/users/useCases/createUser/CreateUserError";
+import { CreateUserUseCase } from "../../modules/users/useCases/createUser/CreateUserUseCase";
 
-let createUserUseCase: CreateUserUseCase;
+
 let inMemoryUsersRepository: InMemoryUsersRepository;
+let createUserUseCase: CreateUserUseCase;
 
 describe("Create User", () => {
 

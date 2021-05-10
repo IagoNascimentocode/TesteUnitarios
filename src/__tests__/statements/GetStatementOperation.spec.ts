@@ -1,9 +1,10 @@
-import { InMemoryUsersRepository } from "../../../users/repositories/in-memory/InMemoryUsersRepository";
-import { CreateUserUseCase } from "../../../users/useCases/createUser/CreateUserUseCase";
-import { InMemoryStatementsRepository } from "../../repositories/in-memory/InMemoryStatementsRepository";
-import { CreateStatementUseCase } from "../createStatement/CreateStatementUseCase";
-import { ICreateStatementDTO } from "../createStatement/ICreateStatementDTO";
-import { GetStatementOperationUseCase } from "./GetStatementOperationUseCase";
+import { InMemoryStatementsRepository } from "../../modules/statements/repositories/in-memory/InMemoryStatementsRepository";
+import { CreateStatementUseCase } from "../../modules/statements/useCases/createStatement/CreateStatementUseCase";
+import { ICreateStatementDTO } from "../../modules/statements/useCases/createStatement/ICreateStatementDTO";
+import { GetStatementOperationUseCase } from "../../modules/statements/useCases/getStatementOperation/GetStatementOperationUseCase";
+import { InMemoryUsersRepository } from "../../modules/users/repositories/in-memory/InMemoryUsersRepository";
+import { CreateUserUseCase } from "../../modules/users/useCases/createUser/CreateUserUseCase";
+
 
 let inMemoryUsersRepository: InMemoryUsersRepository;
 let inMemoryStatementsRepository: InMemoryStatementsRepository;

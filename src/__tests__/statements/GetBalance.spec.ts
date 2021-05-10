@@ -1,7 +1,8 @@
-import { InMemoryUsersRepository } from "../../../users/repositories/in-memory/InMemoryUsersRepository"
-import { CreateUserUseCase } from "../../../users/useCases/createUser/CreateUserUseCase";
-import { InMemoryStatementsRepository } from "../../repositories/in-memory/InMemoryStatementsRepository";
-import { GetBalanceUseCase } from "./GetBalanceUseCase";
+import { InMemoryStatementsRepository } from "../../modules/statements/repositories/in-memory/InMemoryStatementsRepository";
+import { GetBalanceUseCase } from "../../modules/statements/useCases/getBalance/GetBalanceUseCase";
+import { InMemoryUsersRepository } from "../../modules/users/repositories/in-memory/InMemoryUsersRepository";
+import { CreateUserUseCase } from "../../modules/users/useCases/createUser/CreateUserUseCase";
+
 
 
 let inMemoryUsersRepository: InMemoryUsersRepository;
