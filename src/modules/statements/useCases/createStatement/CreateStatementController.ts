@@ -22,7 +22,7 @@ export class CreateStatementController {
       user_id,
       type,
       amount,
-      description
+      description,
     });
 
     return response.status(201).json(statement);
